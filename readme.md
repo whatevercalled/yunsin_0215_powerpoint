@@ -32,7 +32,7 @@ class TaxFeeHandler implements FeeCalculator {
 ```
 let sum = 0;
 // a,b 必須 >= 0 && <= 50
-function add(int a, int b)
+function add(float a, float b)
 {
     result = a + b;
     return result;
@@ -43,10 +43,45 @@ sum = add(1,5)
 ```
 //override 
 // a,b 必須 >= 0 && <= 50
-function add(int a, int b)
+function add(float a, float b)
 {
     result = a + b;
+    //加強條件
     // 回傳型態必須為 int
     return result;
 }
 ```
+# Interface Segregation Principle (i)
+<a name="InterfaceSegregation"></a>
+
+```
+interface DailyUsage {
+    public function void startEngine();
+    public function void move();
+}
+interface RepairUsage {
+    public function void openEngineMode();
+    public function void repairWheel();
+}
+class Car implement DailyUsage, RepairUsage {
+    
+    public function void openEngineMode() { /*...*/ }
+
+    public function void repairWheel() { /*...*/ }
+    public function void startEngine() { /*...*/ }
+    
+    public function void move() { /*...*/ }
+}
+class Driver {
+    DailyUsage myCar = new Car();
+    myCar.startEngine();
+    myCar.move();
+}
+class Mechanic {
+    RepairUsage clientCar = new Car();
+    clientCar.repairWheel();
+    clientCar.openEngineMode();
+}
+```
+雖然上面的功能都引用了car 但是只有 mechanic 可以使用openEngineMode。
+運用了interface 進行了方法的隔離。
