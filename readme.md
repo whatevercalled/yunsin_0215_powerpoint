@@ -91,6 +91,7 @@ class Mechanic {
 
 若將mysqlDB=new MongoDB();
 將要改寫相當多程式。
+
 step1:避免直接在建構子中，直接初始化Mysql，而是將其在外部初始化，再進行傳參。
 初始:
 ```
