@@ -1,6 +1,6 @@
 # Single Responsibility Principle (S)
 ### 一個模組應只對唯一的一個角色負責。
-[]{#single responsibility}
+<a name="SingleResponsibilty"></a>
 
 ```
 class feeCalculator {
