@@ -25,3 +25,95 @@ class TaxFeeHandler implements FeeCalculator {
     }
 }
 ```
+
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
+<a name="OOO"></a>
+```
+interface FeeCalculator {
+    public function calc();
+}
+class CreditCardFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+class TaxFeeHandler implements FeeCalculator {
+    public function calc(percentage) {
+        return ....;
+    }
+}
+```
