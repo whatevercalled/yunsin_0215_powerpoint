@@ -85,3 +85,6 @@ class Mechanic {
 ```
 雖然上面的功能都引用了car 但是只有 mechanic 可以使用openEngineMode。
 運用了interface 進行了方法的隔離。
+
+#  Dependency inversion principle (i)
+<a name="Dependencyinversion"></a>
