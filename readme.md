@@ -88,3 +88,54 @@ class Mechanic {
 
 #  Dependency inversion principle (i)
 <a name="Dependencyinversion"></a>
+step1:避免直接在建構子中，直接初始化Mysql，而是將其在外部初始化，再進行傳參。
+初始:
+```
+class Controller {
+    
+    Mysql mysqlDB = new Mysql();
+    string dbHost = mysqlDB.host;
+}
+```
+注入依賴後:
+```
+class Controller {
+    private Mysql mysqlDB;
+    public Controller(Mysql mysqlDB)
+    {
+        this.mysqlDB = mysqlDB;
+    }
+    string dbHost = this.mysqlDB.host;
+}
+```
+建立interface，介面隔離Mysql與MangoDB。進一步降低耦合。
+```
+class Controller {
+    private Database database;
+    public Controller(Database database) //只注入 Database 介面
+    {
+        this.database = database;
+    }
+    string dbHost = this.database.gethost();
+}
+interface Database {
+    public string getHost();
+    public string getPort();
+    public string getUsername();
+    public string getPassword();
+}
+class Mysql implement Database {
+    public string getHost() {
+        ...
+        return host;
+    }
+    ...
+}
+class MangoDb implement Database {
+    public string getHost() {
+        ...
+        return host;
+    }
+    ...
+}
+```
